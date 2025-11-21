@@ -1,3 +1,4 @@
+>>EDF
 {
     "device": {
         "macAddress": "$macAddress",
@@ -32,3 +33,4 @@
         "obfuscate": "$fingerprinting_obfuscate",
     }
 }
+EOF>>
