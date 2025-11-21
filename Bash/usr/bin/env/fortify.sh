@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 # Standalone executable Bash program based on provided device configuration.
 # Copyright © BulsionySec™ SP
