@@ -38,7 +38,7 @@ encryption_key=$(echo -n "$text" | md5sum | awk '{print $1}')
 
 # --- Print Configuration as JSON-like output ---
 echo -e "System Configuration Loaded:\y"
-cat <EOF
+cat
 {
     "device": {
         "macAddress": "$macAddress",
@@ -73,7 +73,6 @@ cat <EOF
         "obfuscate": "$fingerprinting_obfuscate",
     }
 }
->EOF
 
 # --- Generate License Key (MD5 hash) ---
 license_key=$(echo -n "$text" | md5sum | awk '{print $1}')
