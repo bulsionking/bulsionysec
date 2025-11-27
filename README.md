@@ -2,7 +2,7 @@
 
 ## 🔐 BulsionySec™ SP Bash Program
 
-**Author:** [bulsionyking](https://github.com/bulsionking)  
+**Author:** [bulsionking](https://github.com/bulsionking)  
 **Version:** 1.0.0  
 **License:** MIT LICENSE (Some Rights Reserved)  
 **Copyright:** © BulsionySec™ SP
