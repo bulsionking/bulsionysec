@@ -2,7 +2,7 @@
 
 ## 🔐 BulsionySec™ SP Bash Program
 
-**Author:** [bulsionyking](https://github.com/bulsionyking)  
+**Author:** [bulsionyking](https://github.com/bulsionking)  
 **Version:** 1.0.0  
 **License:** MIT LICENSE (Some Rights Reserved)  
 **Copyright:** © BulsionySec™ SP
@@ -28,14 +28,14 @@ This standalone **Bash configuration utility** is designed to load and display s
 
 ### 🚀 Usage
 1. Ensure Bash is installed on your system.
-2. Save the script as `bulsionysec.sh`.
+2. Save the script as `fortify.sh`.
 3. Make it executable:
    ```bash
-   chmod +x bulsionysec.sh
+   chmod +x fortify.sh
    ```
 4. Run the script:
    ```bash
-   ./bulsionysec.sh
+   ./fortify.sh
    ```
 5. View the generated system configuration and license key.
 
@@ -70,7 +70,7 @@ This standalone **Bash configuration utility** is designed to load and display s
 ### ❤️ Sponsor This Project
 If you enjoy this work and wish to support future developments, you can sponsor me on GitHub:
 
-👉 [Sponsor @bulsionyking](https://github.com/sponsors/bulsionyking)
+👉 [Sponsor @bulsionking](https://github.com/sponsors/bulsionking)
 
 ---
 
@@ -90,6 +90,6 @@ By using this program, you agree to take full responsibility for its operation a
 <!-- GitHub Sponsorship Card -->
 <section id="sponsor-card" style="max-width:480px;margin:40px auto;padding:20px;background:#111;color:#f4f4f4;border-radius:16px;box-shadow:0 0 20px rgba(0,0,0,0.6);text-align:center;font-family:'Inter',sans-serif;">
   <h2 style="font-size:1.5em;margin-bottom:10px;">❤️ Sponsor This Project</h2>
-  <p style="font-size:0.95em;margin-bottom:20px;">Support ongoing security scripting and development by <strong>@bulsionyking</strong>.</p>
-  <a href="https://[github.com/sponsors/bulsionyking](https://www.paylinkz.app/juliusthejules)" target="_blank" style="display:inline-block;padding:12px 24px;background:#e63946;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:background 0.3s ease;">Sponsor on GitHub</a>
-  <p style="margin-top:16px;font-size:0.85em;color:#aaa;">Every contribution helps maintain and enhance t
+  <p style="font-size:0.95em;margin-bottom:20px;">Support ongoing security scripting and development by <strong>@bulsionking</strong>.</p>
+  <a href="https://github.com/sponsors/bulsionking" target="_blank" style="display:inline-block;padding:12px 24px;background:#e63946;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:background 0.3s ease;">Sponsor on GitHub</a>
+  <p style="margin-top:16px;font-size:0.85em;color:#aaa;">Every contribution helps a lot.</p>
