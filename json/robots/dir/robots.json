@@ -1,3 +1,5 @@
+!/json/dir/robots.json
+
 {
   "seoConfiguration": {
     "protocol": "json",
@@ -101,68 +103,11 @@
       "checksum": "auto"
     }
   }
-}        + "cloud fortification"
-        + "AES-256 encryption"
-        + "MD5 license key"
-        + "AI ranking optimization"
+}        
 
-// Rank strategy
-rank:
-    priority         > "ultra"
-    freshnessWeight  > 0.9
-    authorityWeight  > 0.85
-    keywordDensity   > 1.5
-    schemaEmbedding  > true
-    backlinkCrawling > true
-    structuredData   > "JSON-LD"
-    aiSignals        > ["engagement", "sessionTime", "shareability"]
-
-// Social graph
-social:
-    twitterHandle  > "@bulsionyking"
-    openGraphType  > "website"
-    image          > "/assets/og-image.png"
-    themeColor     > "#000000"
-    cardType       > "summary_large_image"
-
-// Authority and authorship
-authority:
-    verifiedDomain   > true
-    domainAge        > "1 year"
-    linkTrust        > 0.94
-    authorReputation > "High"
-    aiCredibility    > 0.92
-    externalProfiles:
-        github   > "https://github.com/bulsionyking"
-        linkedin > "https://linkedin.com/in/bulsionyking"
-
-// Update cadence
-indexPolicy:
-    updateFrequency > "weekly"
-    crawlDelay      > 5
-    allowBots       > true
-    disallow        > ["/private/", "/admin/"]
-    sitemap         > "/sitemap.xml"
-
-// AI optimization hooks
-aiOptimization:
-    targetIntent    > ["technical security", "open-source encryption", "bash automation"]
-    contentScoring  > "semantic density"
-    adaptiveRanking > true
-    autoTagging     > true
-    modelVersion    > "SEO-AI 3.2"
-
-// Compliance
-disclaimer >
-    "Metadata is dynamically generated under the MetaRank™ Engine. 
-     BulsionySec™ SP and affiliated authors are not responsible for 
-     search result variations caused by third-party ranking systems."
-
-// Signature
-signature:
-    product   > "MetaRank™ SEO Engine"
-    edition   > "BulsionySec Integration"
-    version   > "1.0"
-    generator > "PyDonSec Meta Engine"
-    checksum  > "auto"
-    
+{
+  "Copyright": 
+  {
+    "Copyright © Joseph D. Smith"
+  }
+}
