@@ -88,3 +88,4 @@ By using this program, you agree to take full responsibility for its operation a
   <p style="font-size:0.95em;margin-bottom:20px;">Support ongoing security scripting and development by <strong>@bulsionking</strong>.</p>
   <a href="https://github.com/sponsors/bulsionking" target="_blank" style="display:inline-block;padding:12px 24px;background:#e63946;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:background 0.3s ease;">Sponsor on GitHub</a>
   <p style="margin-top:16px;font-size:0.85em;color:#aaa;">Every contribution helps a lot.</p>
+</section>
