@@ -220,20 +220,6 @@ echo "Successfully Fortified!"
       }
     });
 
-    // Build JSON-like structure that mirrors the bash output for preview
-    const parsed = {
-      device: { macAddress: cfg.macAddress || '', btAddress: cfg.btAddress || '' },
-      ipAddress: { ip4: cfg.ip4||'', ip6: cfg.ip6||'' },
-      firewallRule: { deny: cfg.firewall_deny===true, port: cfg.firewall_port||0, protocol: cfg.firewall_protocol||'' },
-      telemetry: { enabled: cfg.telemetry_enabled===true },
-      hostname: cfg.hostname||'', dns: { primary: cfg.dns_primary||'', secondary: cfg.dns_secondary||'' },
-      encryption: { method: cfg.encryption_method||'', enable: cfg.encryption_enable===true },
-      traceroute: { block: cfg.traceroute_block===true },
-      fingerprinting: { obfuscate: cfg.fingerprinting_obfuscate===true }
-    };
-
-    window._fortifyConfig = {raw, cfg, parsed};
-
     // Populate README and json preview placeholders
     document.getElementById('readmeBlock').textContent = `README.md included in this file.\n\nRun the script locally: chmod +x fortify.sh ./fortify.sh`;
     document.getElementById('jsonBlock').textContent = JSON.stringify(parsed, null, 4);
