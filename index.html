@@ -150,15 +150,10 @@ encryption_enable="true"
 
 # --- Traceroute & Fingerprinting ---
 traceroute_block="true"
-fingerprinting_obfuscate="true"
-
-# --- Generate Encryption Key (MD5 hash of text) ---
-text="Copyright © BulsionySec™ SP"
-encryption_key=$(echo -n "$text" | md5sum | awk '{print $1}')
+fingerprinting_block="true"
 
 # --- Print Configuration as JSON-like output ---
-echo "System Configuration Loaded:"
-cat <<EOF
+echo "System Configuration Loaded: 
 {
   "device": {
     "macAddress": "$macAddress",
@@ -196,13 +191,10 @@ cat <<EOF
     "encryption_key": "$encryption_key"
   },
   "traceroute": {
-    "block": "$traceroute_block"
+    "block": "$traceroute_block",
+   "fingerprinting_block": "$fingerprinting_block"
   },
-  "fingerprinting": {
-    "obfuscate": "$fingerprinting_obfuscate"
-  }
 }
-EOF
 
 # --- Generate License Key (MD5 hash) ---
 license_key=$(echo -n "$text" | md5sum | awk '{print $1}')
@@ -289,17 +281,17 @@ echo "Successfully Fortified!"
   <!-- Disclaimer of Liability (insert where appropriate in your HTML) -->
 <section id="disclaimer" aria-labelledby="disclaimer-heading" style="max-width:900px;margin:24px auto;padding:18px;border-radius:12px;background:#111827;color:#f8fafc;font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;box-shadow:0 8px 30px rgba(2,6,23,0.45);line-height:1.5;">
   <h2 id="disclaimer-heading" style="margin:0 0 8px 0;font-size:1.125rem;letter-spacing:0.02em;">Disclaimer of Liability</h2>
-
+</section>
+  
+  <section>
   <p style="margin:0 0 12px 0;">
-    <strong>THIS SOFTWARE AND ITS DOCUMENTATION ARE PROVIDED “AS IS” AND WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong>
-    The author and copyright holders shall not be liable for any damages,
-    whether direct, indirect, incidental, consequential, or otherwise,
-    arising from the use or inability to use this software.
-  </p>
-
-  <p style="margin:0;">
-    By using this program, you agree to take full responsibility for its operation
-    and any resulting effects on systems, data, or networks.
+    <strong>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</strong>
   </p>
 </section>
 <!-- Plain-text fallback (for copy/paste or non-visual contexts):
