@@ -21,8 +21,8 @@ This standalone **Bash configuration utility** is designed to load and display s
 - Telemetry toggling
 - Hostname and DNS configuration
 - AES-256 encryption simulation with generated MD5 key
-- Traceroute blocking and fingerprint obfuscation
-- JSON-style formatted system output
+- Traceroute blocking and fingerprint blocking
+- JSON-style formatted system Traceroute
 
 ---
 
