@@ -36,7 +36,7 @@ encryption_enable="true"
 
 # --- Traceroute & Fingerprinting ---
 traceroute_block="true"
-fingerprinting_enabled="false"
+fingerprinting_block="true"
 
 # --- Generate Encryption Key (MD5 hash of text) ---
 text="Copyright © BulsionySec™ SP"
@@ -44,7 +44,6 @@ encryption_key=$(echo -n "$text" | md5sum | awk '{print $1}')
 
 # --- Print Configuration as JSON-like output ---
 echo "System Configuration Loaded:"
-cat <<EOF
 {
   "device": {
     "macAddress": "$macAddress",
@@ -85,14 +84,10 @@ cat <<EOF
     "block": "$traceroute_block"
   },
   "fingerprinting": {
-    "obfuscate": "$fingerprinting_obfuscate"
-  }
+    "block":
+    "$fingerprintng_block"
+    ,
 }
-EOF
-
-# --- Generate License Key (MD5 hash) ---
-license_key=$(echo -n "$text" | md5sum | awk '{print $1}')
-echo "Your license key (MD5): $license_key"
 
 # --- Success Message ---
 echo "Successfully Fortified!"
