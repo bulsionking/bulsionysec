@@ -58,7 +58,6 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BulsionySec Fortify — Viewer</title>
@@ -68,8 +67,6 @@ if ('serviceWorker' in navigator) {
   <link rel="preload" href="/styles.css" as="style">
   <link rel="preload" href="/script.js" as="script">
 
-
-  
   <style>
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:20px;background:#f7fafc;color:#0f172a}
     .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.08);max-width:980px;margin:12px auto}
@@ -91,7 +88,7 @@ if ('serviceWorker' in navigator) {
     </div>
 
     <section style="margin-top:16px;">
-      <h3>Script (fortify.sh)</h3>
+      <hhtmlript (fortify.sh)</h3>
       <pre id="scriptBlock" tabindex="0"></pre>
     </section>
 
@@ -213,11 +210,6 @@ echo "Successfully Fortified!"
         cfg[key]= (val==='true'?true:(val==='false'?false:(/^[0-9]+$/.test(val)?Number(val):val)));
       }
     });
-
-    // Populate README and json preview placeholders
-    document.getElementById('readmeBlock').textContent = `README.md included in this file.\n\nRun the script locally: chmod +x fortify.sh ./fortify.sh`;
-    document.getElementById('jsonBlock').textContent = JSON.stringify(parsed, null, 4);
-
   })();
   </script>
 
