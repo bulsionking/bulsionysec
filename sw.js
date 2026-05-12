@@ -167,7 +167,5 @@ async function flushQueue() {
           if (event.request.destination === 'image') {
             return caches.match('/icon-192x192.png');
           }
-        });
-    })
-  );
-});                 
+        ));
+    }) 
