@@ -1,9 +1,11 @@
-#!Bash/usr/bin/env bash
-
+#!/usr/bin/env bash
 # Standalone executable Bash program based on provided device configuration.
 # Copyright © BulsionySec™ SP
 
+cat <<EOF
+
 # --- Device Configuration ---
+
 macAddress="00:00:00:00:00:00"
 btAddress="00:00:00:00:00:00"
 
@@ -35,6 +37,7 @@ encryption_method="AES-256"
 encryption_enable="true"
 
 # --- Traceroute & Fingerprinting ---
+adblock_enabled="true"
 traceroute_block="true"
 fingerprinting_block="true"
 
@@ -44,6 +47,7 @@ encryption_key=$(echo -n "$text" | md5sum | awk '{print $1}')
 
 # --- Print Configuration as JSON-like output ---
 echo "System Configuration Loaded:"
+
 {
   "device": {
     "macAddress": "$macAddress",
@@ -65,7 +69,7 @@ echo "System Configuration Loaded:"
     "cacheEnabled": "$cache_enabled",
     "cookiesEnabled": "$cookies_enabled",
     "deprogrammingEnabled": "$deprogramming_enabled"
-    "debugging_enabled": $dubugging_enabled",
+    "debugging_enabled": "$dubugging_enabled",
     {
         
     },
@@ -84,10 +88,15 @@ echo "System Configuration Loaded:"
     "block": "$traceroute_block"
   },
   "fingerprinting": {
-    "block":
-    "$fingerprintng_block"
-    ,
+    "block": "$fingerprinting_block"
+  }
 }
 
+generate_exec="true" filepath="./storage/emulated/0/Android/Fortify/fortify.apk"
+
+generate_exec="true" filepath="./storage/emulated/0/Android/Fortify/fortify.tar.gz"
+
 # --- Success Message ---
-echo "Successfully Fortified!"
+echo "Successfully Fortified
+
+EOF
