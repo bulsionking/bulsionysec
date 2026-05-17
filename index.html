@@ -33,7 +33,7 @@ License: Proprietary — Copyright © BulsionySec™ SP
   <link rel="icon" sizes="512x512" href="./icon-512x512.png">
 <link rel="manifest" href="./app.webmanifest">
 <link rel="serviceworker=" href="./sw">
-<link rel="preload" as="script" type="application/bash" href="./Bash/usr/env/fortify.sh">
+<link rel="preload" as="script" type="application/bash" href="./bin/bash/usr/env/fortify.sh">
 <link rel="preload" as="script" type="application/bash">
   <meta name="theme-color" content="#ffffff">
 
@@ -108,7 +108,10 @@ if ('serviceWorker' in navigator) {
 # Standalone executable Bash program based on provided device configuration.
 # Copyright © BulsionySec™ SP
 
+cat <<EOF
+
 # --- Device Configuration ---
+
 macAddress="00:00:00:00:00:00"
 btAddress="00:00:00:00:00:00"
 
@@ -140,11 +143,17 @@ encryption_method="AES-256"
 encryption_enable="true"
 
 # --- Traceroute & Fingerprinting ---
+adblock_enabled="true"
 traceroute_block="true"
 fingerprinting_block="true"
 
+# --- Generate Encryption Key (MD5 hash of text) ---
+text="Copyright © BulsionySec™ SP"
+encryption_key=$(echo -n "$text" | md5sum | awk '{print $1}')
+
 # --- Print Configuration as JSON-like output ---
-echo "System Configuration Loaded: 
+echo "System Configuration Loaded:"
+
 {
   "device": {
     "macAddress": "$macAddress",
@@ -181,17 +190,22 @@ echo "System Configuration Loaded:
     "enable": "$encryption_enable",
     "encryption_key": "$encryption_key"
   },
-  "traceroute_block": "$traceroute_block",
-   "fingerprinting_block": "$fingerprinting_block"
+  "traceroute": {
+    "block": "$traceroute_block"
   },
+  "fingerprinting": {
+    "block": "$fingerprinting_block"
+  }
 }
 
-# --- Generate License Key (MD5 hash) ---
-license_key=$(echo -n "$text" | md5sum | awk '{print $1}')
-echo "Your license key (MD5): $license_key"
+generate_exec="true" filepath="./storage/emulated/0/Android/Fortify/fortify.apk"
+
+generate_exec="true" filepath="./storage/emulated/0/Android/Fortify/fortify.tar.gz"
 
 # --- Success Message ---
-echo "Successfully Fortified!"
+echo "Successfully Fortified
+
+EOF
   </script>
 
   <!-- Inline preload-style script: reads the embedded script early and parses variables -->
@@ -213,39 +227,18 @@ echo "Successfully Fortified!"
   })();
   </script>
 
-  <!-- Inline utility script: copy & download actions. Kept small and inline for single-file delivery. -->
-  <script type="text/javascript">
-  (function(){
-    const copyBtn=document.getElementById('copyBtn');
-    const downloadBtn=document.getElementById('downloadBtn');
-    const showJsonBtn=document.getElementById('showJsonBtn');
-    const scriptText = ()=>window._fortifyConfig && window._fortifyConfig.raw || '';
-
-    copyBtn.addEventListener('click', async ()=>{
-      try{ await navigator.clipboard.writeText(scriptText()); alert('Script copied to clipboard'); }
-      catch(e){ prompt('Copy the script manually:', scriptText()); }
-    });
-
-    downloadBtn.addEventListener('click', ()=>{
-      const blob=new Blob([scriptText()],{type:'text/x-sh'});
-      const url=URL.createObjectURL(blob);
-      const a=document.createElement('a'); a.href=url; a.download='fortify.sh'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    });
-
-    showJsonBtn.addEventListener('click', ()=>{
-      const pre=document.getElementById('jsonBlock');
-      pre.textContent = JSON.stringify(window._fortifyConfig.parsed, null, 4);
-      pre.scrollIntoView({behavior:'smooth'});
-    });
-  })();
-  </script>
-
 <!-- GitHub Sponsorship Card -->
 <section id="sponsor-card" style="max-width:480px;margin:40px auto;padding:20px;background:#111;color:#f4f4f4;border-radius:16px;box-shadow:0 0 20px rgba(0,0,0,0.6);text-align:center;font-family:'Inter',sans-serif;">
   <h2 style="font-size:1.5em;margin-bottom:10px;">❤️ Sponsor This Project</h2>
   <p style="font-size:0.95em;margin-bottom:20px;">Support ongoing security scripting and development by <strong>@bulsionking</strong>.</p>
   <a href="https://github.com/sponsors/bulsionking" target="_new" style="display:inline-block;padding:12px 24px;background:#e63946;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:background 0.3s ease;">Sponsor on GitHub</a>
   <p style="margin-top:16px;font-size:0.85em;color:#aaa;">Every contribution helps maintain and enhance the BulsionySec™ Program.</p>
+</section>
+
+<section id="source-code">
+    <hr>
+    <h2 style="text-align:center"><a href="https://github.com/bulsionking/bulsionysec">VIEW SOURCE</a></h2>
+    <hr>
 </section>
 
  <section>
@@ -255,6 +248,7 @@ echo "Successfully Fortified!"
 </section>
   
   <section>
+      <hr>
   <p style="margin:0 0 12px 0;">
     <strong>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -264,6 +258,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</strong>
   </p>
+  <hr>
 </section>
 <!-- Plain-text fallback (for copy/paste or non-visual contexts):
 Disclaimer of Liability
