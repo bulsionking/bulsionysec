@@ -26,7 +26,7 @@ A small standalone Bash program that outputs a JSON-like system configuration an
 - The HTML calculates the MD5 license key using a small JS implementation for preview only; it does not run the Bash script.
 - Replace example values (macAddress, ip4, etc.) with real values before deploying on a live system.
 
-License: Proprietary — Copyright © BulsionySec™ SP
+License: MIT License — Copyright © 2025 BulsionySec™ SP
 -->
 
  <meta name="aplicatiom-name" content="BulsionySec Fortify - Viewer">
@@ -82,23 +82,15 @@ if ('serviceWorker' in navigator) {
     <h1>BulsionySec™ Fortify — Viewer</h1>
     <p class="muted">This page shows the provided Bash script and extracts the configuration (preloaded) for easy viewing and download.</p>
 
-    <div class="row" style="margin-top:12px" align="center"">
+    <div class="row" style="margin-top:12px" align="center">
       <button id="copyBtn">Copy script</button>
       <button id="downloadBtn">Download script</button>
     </div>
 
+<div>
     <section style="margin-top:16px;">
       <hhtmlript (fortify.sh)</h3>
       <pre id="scriptBlock" tabindex="0"></pre>
-    </section>
-
-      <h3>Parsed Configuration</h3>
-      <pre id="jsonBlock">(click "Show parsed JSON")</pre>
-    </section>
-
-    <section style="margin-top:12px;">
-      <h3>README</h3>
-      <pre id="readmeBlock">(embedded README is included in the file header)</pre>
     </section>
   </div>
 
@@ -241,7 +233,6 @@ EOF
     <hr>
 </section>
 
- <section>
   <!-- Disclaimer of Liability (insert where appropriate in your HTML) -->
 <section id="disclaimer" aria-labelledby="disclaimer-heading" style="max-width:900px;margin:24px auto;padding:18px;border-radius:12px;background:#111827;color:#f8fafc;font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;box-shadow:0 8px 30px rgba(2,6,23,0.45);line-height:1.5;">
   <h2 id="disclaimer-heading" style="margin:0 0 8px 0;font-size:1.125rem;letter-spacing:0.02em;">Disclaimer of Liability</h2>
